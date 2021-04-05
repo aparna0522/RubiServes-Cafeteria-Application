@@ -2,8 +2,7 @@
 
 This is a Cafeteria Application build using Ruby on Rails application and SQLite Database.
 
-Rails 6.1.3.1
-
+Rails 6.1.3.1 \
 Ruby 3.0.0
 
 Database: SQLite3/development \
