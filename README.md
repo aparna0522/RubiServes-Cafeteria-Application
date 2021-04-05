@@ -47,8 +47,8 @@ bundle execute rails s
 
 <h6>Some Possible Refinements</h6>
 
-1. Ability of the Cafeteria Owner to check the number of billing Clerks and assign them jobs. 
-2. Ability of the Billing Clerk to create the order status for the given item. 
+1. Give the ability to the Cafeteria Owner to check the number of billing Clerks and assign them jobs. 
+2. Give the ability to the Billing Clerk to create the order status for the given item. 
 3. Enhancement in UI. 
 4. Extra Security Validations.
-5. Ability of the Customer to check the availability of tables in the cafeteria and book one accordingly. 
+5. Give the ability to the Customer to check the availability of tables in the cafeteria and book one accordingly. 
