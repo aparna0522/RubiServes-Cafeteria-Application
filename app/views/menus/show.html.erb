@@ -1,6 +1,10 @@
 <h1 class= "Welcome">RubiServes</h1>
 <p class="ViewCart"><%= link_to  "My Cart", "/mycart"%></p>
 <p class="SignOut"><%= link_to  "Sign Out", "/signout"%></p>
+<hr>Your cart status:
+<div class = "cart"> 
+    <%= render 'carts/cart' %>
+</div>
 <hr>
 
 <h3 style="color:Purple">Find out the range of delicacies you can find at RubiServes. We are thrilled to see you here. Let us start the food tour @RubiServes. Are you ready?</h3>
@@ -27,9 +31,12 @@
         <strong>Menu item price:</strong>
         <%= menu.price %>
     </p>
-
-    <form method="POST" >
-        <input class="button" type ="submit" value="Add To Cart">
-    </form>
+    
+    <%= form_for @ordeer_item, remote:true do |f|%>
+        <%= f.hidden_field :menu_id, :value => menu.id %>
+        <%= f.number_field :quantity, :value => 1, :min => 1 %>
+        <%= f.submit "Add to Cart " %>
+    <% end %>
+    
     <hr>
 <% end %>
