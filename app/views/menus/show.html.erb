@@ -1,0 +1,35 @@
+<h1 class= "Welcome">RubiServes</h1>
+<p class="ViewCart"><%= link_to  "My Cart", "/mycart"%></p>
+<p class="SignOut"><%= link_to  "Sign Out", "/signout"%></p>
+<hr>
+
+<h3 style="color:Purple">Find out the range of delicacies you can find at RubiServes. We are thrilled to see you here. Let us start the food tour @RubiServes. Are you ready?</h3>
+<hr>
+<h1 style="color:red">RubiServes Menu Card</h1>
+
+<% Menu.all.each do |menu| %>
+    <p class ="card" >
+        <strong>Menu name:</strong>
+        <%= menu.name %>
+    </p>
+
+    <p class ="card" >
+        <strong>Menu category:</strong>
+        <%= menu.category %>
+    </p>
+
+    <p class ="card" >
+        <strong>Menu description:</strong>
+        <%= menu.description %>
+    </p>
+
+    <p class ="card" >
+        <strong>Menu item price:</strong>
+        <%= menu.price %>
+    </p>
+
+    <form method="POST" >
+        <input class="button" type ="submit" value="Add To Cart">
+    </form>
+    <hr>
+<% end %>

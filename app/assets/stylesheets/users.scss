@@ -1,0 +1,23 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+  }
+.Welcome {
+    font-size: 40px;
+    color: rgb(75, 36, 36);
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+// .container {
+//     background-color: #a1b1a1;
+// }

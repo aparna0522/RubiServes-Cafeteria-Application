@@ -1,0 +1,60 @@
+<h1 class = "Welcome">RubiServes</h1>
+<p>A perfect place to cherish every delicacy you like, ranging from Thai food, Chineese, South Indian, North Indian food!</p>
+
+<hr>
+<div class = "contianer">
+<h2>Register @RubiServes</h2>
+<form action="/users", method="POST">
+    <div class="errors" style = "color:red"} >
+        <% if flash[:register_errors] %>
+            <% flash[:register_errors].each do |error| %>
+                <p> <%= error %>
+            <%end%>
+        <% end %>
+    </div>
+    <section>
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <label for="fname">Name:</label><br>
+        <input type="text" id="firstname" name="user[name]" placeholder="John Doe"><br><br>
+        <label for="fname">Email ID:</label><br>
+        <input type="email" id="email" name="user[email]" placeholder="johndoe@gmail.com"><br><br>
+        <label for="fname">Password:</label><br>
+        <input type="password" id="password" name="user[password]" placeholder="Enter your password"><br><br>
+        <label for="fname">Confirm Password:</label><br>
+        <input type="password" id="password" name="user[password_confirmation]" placeholder="Re-enter your password"><br><br>
+        <label for="roles">Your role:</label><br>
+        <select id="roles" name="roles" placeholder="Select one">
+            <option value="Customer">Customer</option>
+            <option value="Owner">Owner</option>
+            <option value="Clerk">Clerk</option>
+        </select><br><br>
+        <input class= "button" type="submit" value="Register">
+    </section>
+</form>
+</div>
+<hr>
+
+<h2>Login @RubiServes</h2>
+<form action="/sessions", method="POST">
+        <div class="errors" style = "color:red" >
+            <% if flash[:login_errors] %>
+                <% flash[:login_errors].each do |error| %>
+                    <p> <%= error %>
+                <%end%>
+            <% end %>
+        </div>
+    <section>
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <label for="fname">Email ID:</label><br>
+        <input type="email" id="email" name="login[email]" placeholder="johndoe@gmail.com"><br><br>
+        <label for="fname">Password:</label><br>
+        <input type="password" id="password" name="login[password]" placeholder="Enter your password"><br><br>
+        <label for="roles">Your role:</label><br>
+        <select id="roles" name="roles" placeholder="Select one">
+            <option value="Customer">Customer</option>
+            <option value="Owner">Owner</option>
+            <option value="Clerk">Clerk</option>
+        </select><br><br>
+        <input class= "button" type="submit" value="Login" style = "background_color:green">
+    </section>
+</form>

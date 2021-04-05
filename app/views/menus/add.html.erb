@@ -1,0 +1,19 @@
+<h1 class= "Welcome">RubiServes!!</h1>
+<hr>
+<h2> Hello Owner @RubiServes </h2>
+<p> Welcome back. You can add products to your menu by filling out this simple form.</p>
+<p><%= link_to  "Sign Out", "/signout"%></p>
+<form action="/addmenu", method="POST">
+    <section>
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <label for="category">Category</label><br>
+        <input type="text" id="category" name="menu[category]" placeholder="Breakfast/Lunch/Snacks/Drinks/Dinner"><br><br>
+        <label for="name">Menu Item Name:</label><br>
+        <input type="name" id="name" name="menu[name]" placeholder="Enter your items name"><br><br>
+        <label for="text">Menu Item Description:</label><br>
+        <input type="text" id="description" name="menu[description]" placeholder="Write a beautiful description of your food item which can lure your customer to buy it"><br><br>
+        <label for="name">Menu Item Price:</label><br>
+        <input type="numeric" id="price" name="menu[price]" placeholder="Enter the price"><br><br>
+        <input class= "button" type="submit" value="Add To Menu" style = "background_color:green">
+    </section>
+</form>
