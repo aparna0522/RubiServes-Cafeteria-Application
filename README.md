@@ -2,7 +2,15 @@
 
 This is a Cafeteria Application build using Ruby on Rails application and SQLite Database.
 
+Rails 6.1.3.1
+
+Ruby 3.0.0
+
+Database: SQLite3/development \
+Tables: Menus, Order, Order_Items, Users
+
 <h3>How to run this project?</h3>
+
 1. Check if you have rbenv, node, yarn, bundler, ruby, rails installed on your local machine using the following commands
 ```
 rbenv --version 
