@@ -1,25 +1,47 @@
 # README
 
-<!-- # <form method="POST" >
-    #     <input class="button" type ="submit" value="Add To Cart">
-    # </form> -->
+This is a Cafeteria Application build using Ruby on Rails application and SQLite Database.
 
-    <p class ="card" >
-        <strong>Menu name:</strong>
-        <%= menu.name %>
-    </p>
+<h3>How to run this project?</h3>
+1. Check if you have rbenv, node, yarn, bundler, ruby, rails installed on your local machine using the following commands
+```
+rbenv --version 
+node --version
+yarn --version
+bundler --version
+ruby --version
+rails --version
+```
+2. Install rbenv, node, yarn, bundler, ruby, rails on your local machine.
+```
+brew install rbenv
+brew install node
+brew install npm
+brew install yarn
+brew install rails
+brew install bundler
+brew install ruby
+```
+3. Install the webpacker using the following command.
+```
+bundle exec rake webpacker:install
+```
+4. Now use the following commands to set up the database
+```
+bundle e rails db:setup
+bundle e rails db:migrate
+```
+5. Now run the project using the following command
+```
+rails s
+OR 
+bundle execute rails s
+```
 
-    <p class ="card" >
-        <strong>Menu category:</strong>
-        <%= menu.category %>
-    </p>
+<h6>Some Possible Refinements</h6>
 
-    <p class ="card" >
-        <strong>Menu description:</strong>
-        <%= menu.description %>
-    </p>
-
-    <p class ="card" >
-        <strong>Menu item price:</strong>
-        <%= menu.price %>
-    </p>
+1. Ability of the Cafeteria Owner to check the number of billing Clerks and assign them jobs. 
+2. Ability of the Billing Clerk to create the order status for the given item. 
+3. Enhancement in UI. 
+4. Extra Security Validations.
+5. Ability of the Customer to check the availability of tables in the cafeteria and book one accordingly. 
