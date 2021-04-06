@@ -1,0 +1,36 @@
+<h1 class= "Welcome"><img src="https://www.designfreelogoonline.com/wp-content/uploads/2015/04/00420-cart-02.png" width=80 height=80>RubiServes!!</h1>
+
+<p class="SigningOut"><%= link_to  "Sign Out", "/signout"%></p>
+<h2 style="padding:5px">Admin Control Panel</h2>
+<hr>
+<% if logged_in? %>
+    <h2 style="padding:5px;">  Current Logged in Owner Name: <%= current_user.name %> </h2>
+    <p style="padding:5px;"> Welcome back. You can add products to your menu by filling out this simple form.</p>
+    
+<div class ="aparna1">
+<p style="font-family: Veranda; font-size: 23px"> Add New FoodItem To Your Menu </p>
+<div class="card" style="width: 20rem; padding-left:21px">
+    <form action="/addmenu", method="POST">
+        <section>
+            <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+            <label for="category">Category</label><br>
+            <input type="text" size=33 id="category" name="menu[category]" placeholder="Breakfast/Lunch/Snacks/Drinks/Dinner"><br><br>
+            <label for="name">Menu Item Name:</label><br>
+            <input type="name" size=33 id="name" name="menu[name]" placeholder="Enter your items name"><br><br>
+            <label for="text">Menu Item Description:</label><br>
+            <input type="text" size=33 id="description" name="menu[description]" placeholder="Write the description of the fooditem"><br><br>
+            <label for="name">Menu Item Price:</label><br>
+            <input type="numeric" size=33 id="price" name="menu[price]" placeholder="Enter the price"><br><br>
+            <input class= "button" type="submit" value="Add To Menu" style = "background_color:green">
+        </section>
+    </form>
+</div>
+</div>
+
+<% else %>
+<div class="renderingcart">
+<h4 style= "color:red">Please signup or login as an owner to view the contents of this page</h4><br>
+<%= button_to "Login", '/', method: :get%><br>
+<%= button_to "Sign Up", '/', method: :get%>
+</div>
+<%end%>

@@ -1,0 +1,26 @@
+<h1 class= "Welcome"><img src="https://www.designfreelogoonline.com/wp-content/uploads/2015/04/00420-cart-02.png" width=80 height=80>RubiServes</h1>
+<hr>
+<% if logged_in? %>
+<p class="ViewCart" ><%= link_to "Menu Card", "/menus" %></p>
+<p class="ViewCart">🛒<%= link_to  "My Cart", "/mycart"%></p>
+<p class="SignOut"><%= link_to  "Sign Out", "/signout"%></p>
+<hr>
+
+
+
+<h6 style="color:Purple; padding: 5px;">Find out the range of delicacies you can find at RubiServes. We are thrilled to see you here. Let us start the food tour @RubiServes. Are you ready?</h6><hr>
+<marquee scrollamount=10 ><img src="https://www.designfreelogoonline.com/wp-content/uploads/2015/04/00420-cart-02.png" width=400 height=350><img src="https://thumbs.dreamstime.com/z/american-girl-american-food-illustration-79534834.jpg" width=400 height=350><img src="https://images.creativemarket.com/0.1.0/ps/6838331/1820/1292/m1/fpnw/wm1/xunyrshg9hnnh86ne88lnu0h2wkzi4onbvnphjovndtirpwjjzfyivboqvmjnsxv-.jpg?1566189080&s=570c3fa4754ca0a3293fc8839bbbfe93" width=400 height=350></marquee>
+<div class ="card1">
+    <p>RubiServes has been successfully owned and operated since 2021 and welcomes you to drop by and join the locals in our fun and friendly atmosphere. We are located at Freshworks Technologies, Chennai. 
+
+    Our goal is to offer great homemade food at a reasonable price while maintaining great quality and service. Enjoy a selection of appetizers, sandwiches, fresh seafood, steak, pastas, fresh salads, homemade desserts and daily specials, including everything from classic favorites to modern cuisine. 
+    
+    Come join us for breakfast, lunch, snacks or dinner and dine on our outdoor patio or in the newly remodeled dining room.</p></div>
+<p style="padding-left:10px;"> © RubiServes is a cafeteria application designed using Ruby on Rails by Aparna Naik. </p>
+<% else %>
+<div class="renderingcart">
+<h5 style="color:red">Please login to view the menus page</h5>
+<%= button_to "Login", '/', method: :get%><br>
+<%= button_to "Sign Up", '/', method: :get%>
+</div>
+<% end %>

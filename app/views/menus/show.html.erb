@@ -1,0 +1,38 @@
+<h1 class= "Welcome"><img src="https://www.designfreelogoonline.com/wp-content/uploads/2015/04/00420-cart-02.png" width=80 height=80>RubiServes Menu Card</h1><hr>
+
+<% if logged_in? %>
+<p class="ViewCart">🛒<%= link_to  "My Cart", "/mycart"%></p>
+<p class="SignOut"><%= link_to  "Sign Out", "/signout"%></p>
+<hr>
+
+<div class = "renderingcart"> 
+    <p><bold>Your cart status:</bold>
+    <%= render 'carts/cart' %></p>
+</div>
+<hr>
+<div class ="aparna">
+<% Menu.all.each do |menu| %>
+    <div class="card1" style="width: 20rem;">
+        <div class="card-body">
+            <h3 class="card-title"><%= menu.name %> </h3>
+            <p class="card-text mb-2 text-muted">Category: <%= menu.category %> </p><hr>
+            <p class="card-text"><%= menu.description %> </p>
+            <h4 class="card-text">Rs. <%= menu.price %> </h4>
+            <%= form_for @ordeer_item, remote:true do |f|%>
+                <%= f.hidden_field :menu_id, :value => menu.id %>
+                <%= f.number_field :quantity, :value => 1, :min => 1 %><br><br>
+                <p class = "button1"><%= f.submit "Add to Cart " %></p>
+            <% end %>
+         </div>
+    </div>
+    
+    <br>
+<% end %>
+<% else %>
+<div class="renderingcart">
+<h5 style="color:red">Please login to view the menus page</h5>
+<%= button_to "Login", '/', method: :get%><br>
+<%= button_to "Sign Up", '/', method: :get%>
+</div>
+</div>
+<% end %>

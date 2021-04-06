@@ -1,0 +1,37 @@
+<h1 class= "Welcome"><img src="https://www.designfreelogoonline.com/wp-content/uploads/2015/04/00420-cart-02.png" width=80 height=80>RubiServes</h1>
+<div class = "design"><hr>
+
+<% if logged_in? %>
+<p class="ViewCart" ><%= link_to "Menu Card", "/menus" %></p>
+<p class="SignOut"><%= link_to  "Sign Out", "/signout"%></p>
+<hr>
+
+<h4>Here you can find the list of products in your shopping cart!!</h4><hr>
+
+<% @ordeer_items.each do |item| %>
+
+    <h3>Menu Name: <%= item.menu.name %></h3>
+    <p><b>Menu Price: </b><%= item.menu.price %></p>
+
+
+    <%= form_for item, remote: true do |f| %>
+        <%= f.hidden_field :menu_id, :value => item.menu.id %>
+        <%= f.number_field :quantity, :value => item.quantity.to_i %>
+        <%= f.submit "Update Cart " %>
+        <p><%= link_to "Remove This Item From My Cart", ordeer_item_path(item), method: :delete %></p>
+    <% end %>
+    <p><b>Subtotal: Rs.</b><%= item.total %></p>
+    <hr>
+
+<% end %>
+
+<div>
+
+<h3>Your current card value has a subtotal of: Rs.<%= current_ordeer.subtotal %></h3>
+<% else %>
+<div class="renderingcart">
+<h5 style="color:red">Please login to view this resource.</h5>
+<%= button_to "Login", '/', method: :get%><br>
+<%= button_to "Sign Up", '/', method: :get%>
+</div>
+<% end %>
