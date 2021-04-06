@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/mycart" => "carts#show"
   get "/addmenu" => "menus#add"
   post "/addmenu" => "menus#create"
+  resources :charges
   resource :carts, only:[:show]
   resources :ordeer_items
+  
 end

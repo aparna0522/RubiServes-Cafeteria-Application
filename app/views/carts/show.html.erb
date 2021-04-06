@@ -28,6 +28,22 @@
 <div>
 
 <h3>Your current card value has a subtotal of: Rs.<%= current_ordeer.subtotal %></h3>
+
+<%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Amount: Rs.<%= current_ordeer.subtotal %></span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_51IdEKRSIpPxlweCTAuXFllvO8LkTEvYontABsWqkt5QiquhGnyqxCh6UKAYksypw5g5jwlOxSTPiuirpkTqvttQl006aWfoixm"
+            
+            data-description="PAYMENT GATEWAY"
+            data-amount=<%= current_ordeer.subtotal %>
+            data-locale="auto">
+    </script>
+<% end %>
 <% else %>
 <div class="renderingcart">
 <h5 style="color:red">Please login to view this resource.</h5>

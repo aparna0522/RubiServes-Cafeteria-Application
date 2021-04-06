@@ -52,3 +52,7 @@ bundle execute rails s
 3. Enhancement in UI. 
 4. Extra Security Validations.
 5. Give the ability to the Customer to check the availability of tables in the cafeteria and book one accordingly. 
+
+
+
+PUBLISHABLE_KEY=pk_test_51IdEKRSIpPxlweCTAuXFllvO8LkTEvYontABsWqkt5QiquhGnyqxCh6UKAYksypw5g5jwlOxSTPiuirpkTqvttQl006aWfoixm SECRET_KEY=sk_test_51IdEKRSIpPxlweCT0zjt65bzU6pqY9GEnriX2BZnGUSbSqkqXgFgl3mshRzYIPpFHdzF93v297uEQ13eeoqXElps00ZBVsz3SO rails s 
