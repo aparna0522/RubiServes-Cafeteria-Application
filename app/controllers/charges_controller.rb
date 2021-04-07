@@ -3,13 +3,6 @@ class ChargesController < ApplicationController
     end
     
     def create
-      # Amount in cents
-      @amount = 29000
-        # @ordeer = current_ordeer
-        # @ordeer_item = @ordeer.ordeer_items.find(params[:id])
-    #   request = Ordeer.find(params[:id])
-    #   amount = request.sum(:total) * 100
-    
       customer = Stripe::Customer.create({
         email: params[:stripeEmail],
         source: params[:stripeToken],
@@ -17,7 +10,7 @@ class ChargesController < ApplicationController
     
       charge = Stripe::Charge.create({
         customer: customer.id,
-        amount: @amount,
+        amount: current_ordeer.subtotal.to_i * 100 ,
         description: 'Rails Stripe customer',
         currency: 'inr',
       })
