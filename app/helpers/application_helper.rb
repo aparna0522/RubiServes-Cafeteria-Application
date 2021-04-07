@@ -5,6 +5,5 @@ module ApplicationHelper
         else
             Ordeer.new
         end
-
     end
 end
