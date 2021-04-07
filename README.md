@@ -38,21 +38,27 @@ bundle exec rake webpacker:install
 bundle e rails db:setup
 bundle e rails db:migrate
 ```
-5. Now run the project using the following command
+5. To make the Payment Gateway working: \
+   a. Create a developer mode account on Stripe \
+   b. Find the API keys under the Developers Section \
+   c. Now, paste the Publishable key in the file apps/views/carts/show.html.erb 
+6. Now run the project(without integration with Stripe) 
 ```
 rails s
 OR 
 bundle execute rails s
 ```
-
+To run the project with payment gateway integration 
+```
+SECRET_KEY=<YOUR_SECRET_KEY> PUBLISHABLE_KEY=<YOUR_PUBLISHABLE_KEY> rails s
+```
+ 
 <h6>Some Possible Refinements</h6>
 
 1. Give the ability to the Cafeteria Owner to check the number of billing Clerks and assign them jobs. 
 2. Give the ability to the Billing Clerk to create the order status for the given item. 
 3. Enhancement in UI. 
-4. Extra Security Validations.
-5. Give the ability to the Customer to check the availability of tables in the cafeteria and book one accordingly. 
+4. Give the ability to the Customer to check the availability of tables in the cafeteria and book one accordingly. 
+5. Work on the Payment Gateway Integration. 
 
 
-
-PUBLISHABLE_KEY=pk_test_51IdEKRSIpPxlweCTAuXFllvO8LkTEvYontABsWqkt5QiquhGnyqxCh6UKAYksypw5g5jwlOxSTPiuirpkTqvttQl006aWfoixm SECRET_KEY=sk_test_51IdEKRSIpPxlweCT0zjt65bzU6pqY9GEnriX2BZnGUSbSqkqXgFgl3mshRzYIPpFHdzF93v297uEQ13eeoqXElps00ZBVsz3SO rails s 
